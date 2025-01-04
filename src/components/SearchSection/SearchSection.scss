@@ -1,0 +1,114 @@
+
+
+.searchBar {
+  width: 1126px;
+  height: 329px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  border-radius: 5px;
+  background-color: #1e1e1e;
+  margin-top: 10rem;
+  margin-left: 160px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  .container {
+    display: flex;
+    align-items: center;
+    input {
+      display: none;
+    }
+    .item {
+      display: inline-block;
+      position: relative;
+    }
+    label {
+      display: inline-block;
+      padding: 10px 30px;
+      min-width: 5rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.767);
+    }
+    :last-child {
+      :last-child {
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+    :first-child {
+      :last-child {
+        border-radius: 5px 0px 0px 5px;
+      }
+    }
+    :not(:first-child):not(:last-child) {
+      margin: 0px 3px;
+    }
+
+    input[type="radio"]:checked + label {
+      animation: glow 0.3s forwards;
+
+    }
+    input[type="radio"]:not(:checked) + label {
+       animation: disaglow 0.3s forwards;
+    }
+  }
+  .searchnlike {
+    background-color: transparent;
+    border: none;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    .savesearch {
+      color: white;
+      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      font-weight: 100;
+    }
+    .like {
+      background-image: url("./img/searchnlike.svg");
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+  }
+  .searchnlike:hover > .like {
+    transform: scale(1.1);
+  }
+  .firstSelectingRow{
+    grid-column: 1 / 3;
+    width: 1035px;
+    height: 71px;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    // grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@keyframes glow {
+  100% {
+    background-image: linear-gradient(
+      90deg,
+      rgba(195, 62, 142, 1) 0%,
+      rgba(170, 19, 82, 1) 100%
+    );
+    box-shadow: 0 0 30px 0 rgba(170, 19, 82, 1);
+  }
+}
+
+@keyframes disaglow {
+  0%{
+    background: initial;
+    box-shadow: initial;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.767);
+    box-shadow: none;
+  }
+}
