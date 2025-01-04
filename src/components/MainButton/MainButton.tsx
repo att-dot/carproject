@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import './MainButton.scss'
 interface Props {
     onClick: () => void,
@@ -7,7 +7,7 @@ interface Props {
     btnStyle: string,
     link: string
 }
-const MainButton: React.FC<Props> = ({ onClick, label, arrow, btnStyle, link }) => {
+const MainButton: React.FC<Props> = ({ onClick, label, arrow, btnStyle }) => {
     return (
         <button onClick={onClick}
             className={'ButtonGeneral ' + btnStyle}

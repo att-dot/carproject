@@ -1,9 +1,9 @@
-import { useState } from 'react'
+
 import './CardCar.scss'
 import MainButton from '../MainButton/MainButton'
 
 function CardCar() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
