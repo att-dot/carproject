@@ -1,8 +1,8 @@
 import { useId, useState } from "react";
 import "./CustomSelector.scss";
 
-export default function CustomSelector({options, subject, defaultValue}) {
-  const [isSelecting, setIsSelecting]: [boolean, any] = useState(false);
+export default function CustomSelector({options, subject, defaultValue}: {options: string[]; subject: string; defaultValue: string}) {
+  // const [isSelecting, setIsSelecting]: [boolean, any] = useState(false);
   const [selectedValue, setSelectedValue]: [string, any] =
     useState(defaultValue || "нажмите чтобы выбрать");
 console.log(options)
@@ -22,10 +22,10 @@ console.log(options)
         onClick={setSelectedValue}
         options={options}
         selectedValue={selectedValue}
-        optional={() => {
-          setIsClicked(false);
-          setIsSelecting(false);
-        }}
+        // optional={() => {
+        //   setIsClicked(false);
+        //   setIsSelecting(false);
+        // }}
         subject={subject}
         className = {isClicked === null?'': isClicked? 'visibleOptions': 'hiddenOptions'}
       />
@@ -60,7 +60,8 @@ type OptionsType = {
   onClick: (newV: string) => void;
   options: string[];
   selectedValue: string;
-  optional: any;
+  className: string;
+  subject: string;
 };
 function Options({ onClick, options, selectedValue, className, subject }: OptionsType) {
   const arr = [];

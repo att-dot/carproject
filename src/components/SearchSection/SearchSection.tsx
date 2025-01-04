@@ -1,4 +1,4 @@
-import { useId, useState } from "react";
+import {  useState } from "react";
 import CustomSelector from "../CustomSelector/CustomSelector";
 import "./SearchSection.scss";
 import "./img/searchnlike.svg";
@@ -53,8 +53,13 @@ export default function SearchSection({}) {
     </form>
   );
 }
-
-function RadioButton({name, labelV, selectedValue, setSelectedValue }) {
+type RadioButtonType = {
+name: string;
+labelV: string;
+selectedValue: string;
+setSelectedValue: (labelV: string) => void
+}
+function RadioButton({name, labelV, selectedValue, setSelectedValue }: RadioButtonType) {
   return (
     <>
       <input id={name + labelV} type="radio" name={name} value={labelV} key={name + labelV} checked={selectedValue === labelV} onChange={()=>{setSelectedValue(labelV)}}/>
@@ -63,7 +68,7 @@ function RadioButton({name, labelV, selectedValue, setSelectedValue }) {
   );
 }
 
-function FirstSelection({list, b}){
+function FirstSelection({list, b}: {list: string[]; b: any}){
   const [selectedValue, setSelectedValue] = useState(b.carAge)
   return (
     <>

@@ -1,9 +1,8 @@
-import { useState } from "react";
+
 import "./menu.scss";
 import { NavLink } from "react-router-dom";
 
 function Menu() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
