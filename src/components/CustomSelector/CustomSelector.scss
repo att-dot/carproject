@@ -1,15 +1,21 @@
 .selector {
   box-sizing: border-box;
-  width: 303px;
-  height: 48px;
-  padding: 5px 20px;
+  // width: 29.3%;
+  width: 100%;
+  // height: 69%;
+  height: 100%;
+  padding: 5px 7px 5px 20px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.767);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-
+  
+  .selected-value{
+    width: auto;
+    height: 30px;
+  }
   .chevronContainer {
     width: 34px;
     height: 34px;
@@ -31,9 +37,9 @@
       transition: 0.3s;
     }
     
-    .checkboxChevron:not(:checked), .options {
-      display: none;
-    }
+    // .checkboxChevron:not(:checked), .options {
+    //   display: none;
+    // }
     .chevron {
       background-size: contain;
       width: 34px;
@@ -46,22 +52,20 @@
 
       
     }
-    .chevron-down {
-      // background-image: url("./img/chevron-down.svg");
-      transform: rotate(0deg);
-      transition: 0.3s;
-    }
-    .chevron-down + .options {
-      animation: disappear 0.3s forwards;
-    }
-    .chevron-up {
-      // background-image: url("./img/chevron-up.svg");
-      transform: rotate(180deg);
-      transition: 0.3s;
-    }
-    .chevron-up ~ .options {
-      animation: appear 0.3s forwards;
-    }
+    // .chevron-down {
+    //   transform: rotate(0deg);
+    //   transition: 0.3s;
+    // }
+    // .chevron-down + .options {
+    //   animation: disappear 0.3s forwards;
+    // }
+    // .chevron-up {
+    //   transform: rotate(180deg);
+    //   transition: 0.3s;
+    // }
+    // .chevron-up ~ .options {
+    //   animation: appear 0.3s forwards;
+    // }
   }
 
   .options {
@@ -71,12 +75,15 @@
     left: 0px;
     border-radius: 5px;
     display: block;
-    width: 303px;
+    // width: 303px;
+    width: 100%;
     max-height: 150px;
     height: 0px;
     overflow: scroll;
     scrollbar-width: none;
-    background-color: rgba(0, 0, 0, 0.767);
+    background-color: rgb(0, 0, 0);
+    z-index: 10;
+    
     div{
       input{
         display: none;

@@ -6,12 +6,13 @@
   box-sizing: border-box;
   padding: 20px 30px;
   border-radius: 5px;
-  background-color: #1e1e1e;
+  background-color: #0e0e0e;
   margin-top: 10rem;
   margin-left: 160px;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(2, 1fr);
+  font: 17px 'Gilroy-Regular';
   .container {
     display: flex;
     align-items: center;
@@ -82,12 +83,92 @@
     grid-column: 1 / 3;
     width: 1035px;
     height: 71px;
-    display: flex;
-    align-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 48px;
+    align-content: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+    gap: 63px;
     // grid-template-columns: repeat(3, 1fr);
+  }
+  .secondSelectingRow{
+    grid-column: 1 / 3;
+    width: 1035px;
+    height: 71px;
+    // display: flex;
+    display: grid;
+    grid-template-columns: 179px repeat(4, 1fr);
+    grid-template-rows: 48px;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 63px;
+    align-items: center;
+  }
+  .thirdSelectingRow{
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    div{
+      display: inline-block;
+      input{
+        background-color: rgba(0, 0, 0, 0.767);
+        box-sizing: border-box;
+        padding: 0px;
+        border: none;
+        width: 151px;
+        height: 47px;
+        padding: 8.5px 23.5px;
+      }
+      input:focus-visible{
+        outline: none;
+      }
+      :last-child{
+        border-radius: 0px 5px 5px 0px;
+        margin-left: 3px;
+      }
+      :first-child{
+        border-radius: 5px 0px 0px 5px;
+      }
+      ::placeholder{
+        color: rgba(255, 255, 255, 0.87);
+        font-weight: 400;
+        font: 17px 'Gilroy-Regular';
+        // font: 16px Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+      }
+    }
+    .showsugg{
+      width: 278px;
+      height: 43px;
+      font: 17px 'Gilroy-Regular';
+      box-shadow: 0 0 30px 0 rgba(170, 19, 82, 1)
+    }
+    // input{
+    //   background-color: rgba(0, 0, 0, 0.767);
+    //   box-sizing: border-box;
+    //   padding: 0px;
+    //   border: none;
+    //   width: 151px;
+    //   height: 47px;
+    //   padding: 8.5px 23.5px;
+    // }
+    // input:focus-visible{
+    //   outline: none;
+    // }
+    // :last-child{
+    //   border-radius: 0px 5px 5px 0px;
+    //   margin-left: 3px;
+    // }
+    // :first-child{
+    //   border-radius: 5px 0px 0px 5px;
+    // }
+    // ::placeholder{
+    //   color: rgba(255, 255, 255, 0.87);
+    //   font-weight: 400;
+    //   font: 16px Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    // }
   }
 }
 
